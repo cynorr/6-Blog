@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Update && post blogs
+hexo clean && hexo g && hexo d 
+
+# Update the backup of blogs
+nameflag=$(date "+%Y-%m-%d %H:%M")
+git add -A
+git commit -m "$nameflag"
+git push -u hexo master 
