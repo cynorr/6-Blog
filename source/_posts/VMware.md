@@ -8,7 +8,7 @@ tag: VMware虚拟机
 Linux系统是程序员主要开发环境,但是linux在办公应用方面做的并不完美,比如部分打印机不支持和QQ版本不稳定.为避免双系统频繁切换问题,有必要在linux下安装虚拟街.VMware是目前最优秀的虚拟机,内存读取速度,网速,硬盘读取速度等各个参数完胜VirtualBox,本文介绍Fedora下VMware虚拟机的安装.
 
 ##准备工作
-* 安装文件:[VmwareStation11 for Linux](1F04Z-6D111-7Z029-AV0Q4-3AEH8)
+* 安装文件:VMware-Workstation-Full-11.1.2-2780323.x86_64.bundle
 * VMware11永久序列号:1F04Z-6D111-7Z029-AV0Q4-3AEH8
 * 配置gtk-2.0
 ```
