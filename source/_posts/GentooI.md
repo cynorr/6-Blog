@@ -311,7 +311,7 @@ root # env-update && source /etc/profile
 root # reboot
 ```
 
-## Add non-root user
+## Step6: Add non-root user
 ```
 root # useradd -d /home/cyno -m cyno
 root # passwd cyno
