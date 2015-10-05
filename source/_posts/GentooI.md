@@ -135,6 +135,10 @@ root # source /etc/profile
 ```
 
 ## Step2 Configuring the System
+Set the password
+```bash
+root # passwd
+```
 To optimize Gentoo, it is possible to set a couple of variables which impact Portage behavior. All those variables can be set as environment variables. To keep the settings, Portage reads in the **/etc/portage/make.conf** file, a configuration file for Portage.
 
 Fire up an editor (without `vim` here, we use `nano`) to alter the optimization variables.
@@ -305,4 +309,13 @@ Final make slim launch xfce
 root # echo XSESSION=\"Xfce4\" > /etc/env.d/90xsession
 root # env-update && source /etc/profile
 root # reboot
+```
+
+## Add non-root user
+```
+root # useradd -d /home/cyno -m cyno
+root # passwd cyno
+root # usermod -G wheel,audio cyno
+root # gpasswd -a cyno wheel
+root # chmod +s /bin/su
 ```
