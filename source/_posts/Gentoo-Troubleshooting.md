@@ -20,3 +20,8 @@ root # emerge laptop-mode-tools
 root # rc-update add laptop_mode default
 root # emerge xfce4-power-manager
 ```
+### 5. error: generated/bounds.h when emerging VirtualBox
+```bash
+root # cd /usr/src/linux
+root # make modules_prepare
+```
