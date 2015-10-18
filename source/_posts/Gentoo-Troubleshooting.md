@@ -27,7 +27,7 @@ root # make modules_prepare
 ```
 ### 6. Necessary applications list
 ```
-emerge --autounmask-write xorg-drivers xorg-x11 xfce4-meta xfce4-notifyd xfce4-panel xfce4-terminal x11-misc/slim xf86-video-intel xf86-video-vesa firefox libreoffice google-chrome shadowsocks-libev amule net-p2p/mldonkey htop fcitx smplayer vlc gedit alsa-utils rhythmbox adobe-flash virtualbox wps-office sudo xfce4-screenshooter sunpinyin wqy-zenhei
+emerge --autounmask-write xorg-drivers xorg-x11 xfce4-meta xfce4-notifyd xfce4-panel xfce4-terminal x11-misc/slim xf86-video-intel xf86-video-vesa firefox libreoffice google-chrome shadowsocks-libev amule net-p2p/mldonkey htop fcitx smplayer vlc gedit alsa-utils rhythmbox adobe-flash virtualbox wps-office sudo xfce4-screenshooter sunpinyin media-fonts/symbola wqy-zenhei
 ```
 ### 7. Chinese fonts
 First, configure the /etc/locale.gen
@@ -43,4 +43,9 @@ Then, install the Chinese fonts and refresh profile
 ```bash
 root # emerge wqy-zenhei #正黑
 root # env-update && source /etc/profile
+```
+### 8. Wps error: lack of symbola
+```
+root # emerge media-fonts/symbola
+root # fc-cache
 ```
