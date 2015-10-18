@@ -44,8 +44,3 @@ Then, install the Chinese fonts and refresh profile
 root # emerge wqy-zenhei #正黑
 root # env-update && source /etc/profile
 ```
-### 8. Wps error: lack of symbola
-```
-root # emerge media-fonts/symbola
-root # fc-cache
-```
