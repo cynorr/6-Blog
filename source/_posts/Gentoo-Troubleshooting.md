@@ -27,6 +27,7 @@ root # make modules_prepare
 ```
 ### 6. Necessary applications list
 ```
+euse -E vlc networkmanager alsa
 emerge --autounmask-write \
 x11-misc/slim xf86-video-intel xf86-video-vesa xorg-drivers xorg-x11 \
 xfce4-meta xfce4-notifyd xfce4-panel xfce4-terminal xfce4-screenshooter xfce4-battery-plugin xfce4-power-manager xfce4-mixer xfce4-appfinder xfce4-archive-plugin xfce-extra/tumbler thunar-volman\
@@ -35,7 +36,7 @@ smplayer vlc alsa-utils rhythmbox adobe-flash \
 virtualbox virtualbox-guest-additions wine \
 wps-office media-fonts/symbola libreoffice gedit fcitx wqy-zenhei sunpinyin \
 compiz fusion-icon emerald compiz-plugins-main compiz-plugins-extra \
-htop sudo 
+htop sudo laptop-mode-tools bumblebee 
 ```
 ### 7. Chinese fonts
 First, configure the /etc/locale.gen
