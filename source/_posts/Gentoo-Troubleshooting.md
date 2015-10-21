@@ -29,8 +29,8 @@ root # make modules_prepare
 ```
 emerge --autounmask-write \
 x11-misc/slim xf86-video-intel xf86-video-vesa xorg-drivers xorg-x11 \
-xfce4-meta xfce4-notifyd xfce4-panel xfce4-terminal xfce4-screenshooter xfce4-battery-plugin xfce4-power-manager xfce4-mixer xfce4-appfinder\
-thunderbird firefox google-chrome net-misc/networkmanager nm-applet \
+xfce4-meta xfce4-notifyd xfce4-panel xfce4-terminal xfce4-screenshooter xfce4-battery-plugin xfce4-power-manager xfce4-mixer xfce4-appfinder xfce4-archive-plugin xfce-extra/tumbler thunar-volman\
+thunderbird firefox google-chrome dhcp net-misc/networkmanager nm-applet \
 smplayer vlc alsa-utils rhythmbox adobe-flash \
 virtualbox virtualbox-guest-additions wine \
 wps-office media-fonts/symbola libreoffice gedit fcitx wqy-zenhei sunpinyin \
