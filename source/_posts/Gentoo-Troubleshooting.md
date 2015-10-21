@@ -27,7 +27,15 @@ root # make modules_prepare
 ```
 ### 6. Necessary applications list
 ```
-emerge --autounmask-write xorg-drivers xorg-x11 xfce4-meta xfce4-notifyd xfce4-panel xfce4-terminal x11-misc/slim xf86-video-intel xf86-video-vesa firefox libreoffice google-chrome shadowsocks-libev amule net-p2p/mldonkey htop fcitx smplayer vlc gedit alsa-utils rhythmbox adobe-flash virtualbox wps-office sudo xfce4-screenshooter sunpinyin media-fonts/symbola wqy-zenhei wine virtualbox-guest-additions
+emerge --autounmask-write \
+x11-misc/slim xf86-video-intel xf86-video-vesa xorg-drivers xorg-x11 \
+xfce4-meta xfce4-notifyd xfce4-panel xfce4-terminal xfce4-screenshooter \
+firefox google-chrome \
+fcitx wqy-zenhei sunpinyin \
+smplayer vlc alsa-utils rhythmbox adobe-flash \
+virtualbox virtualbox-guest-additions wine \
+wps-office media-fonts/symbola libreoffice gedit \
+htop sudo 
 ```
 ### 7. Chinese fonts
 First, configure the /etc/locale.gen
