@@ -162,6 +162,11 @@ MAKEOPTS="-j5"
 ```
 USE="X dbus jpeg lock session startup-notification thunar udev -gnome -kde -minimal -qt4 
 ```
+**Graphic Configuration**
+```
+VIDEO_CARDS="intel nvidia" # Don't add i915 or i965, which would cause issue on slim
+INPUT_DEVICES="evdev"
+```
 **Selecting mirrors**
 In order to download source code quickly it is recommended to select a fast mirror. we should surf Gentoo mirror list and search for a mirror that is close to the system's physical location.
 First back to boot installing CD environment, which provided a nice tool called `mirrorselect`:
