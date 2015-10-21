@@ -53,3 +53,11 @@ Then, install the Chinese fonts and refresh profile
 root # emerge wqy-zenhei #正黑
 root # env-update && source /etc/profile
 ```
+### 8. Inatll OS X theme
+First download the Gnome Cupertino file, which is available at gnome-look.org. Then unpackage it and copy it to /usr/share/themes/ rather than user's home.
+After installation, open apperence and activate the Gnome-Cupertino theme. But after you activate the theme, the window frame remains the same. To fix this we need `dconf` - the Configurator system files tools.
+```bash
+root # emerge dconf dconf-editor
+```
+After installation, launch the `dconf-editor`, go to the following address: **org/gnome/desktop/wm/preferences** and in the line theme, change the name of the theme on `Gnome-Cupertino`. 
+Now the window frames should vary according to the installed and activated the theme **Gnome Cupertino**. If not, open the apperance and reactivate **Gnome Cupertino**.
