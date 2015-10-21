@@ -36,7 +36,7 @@ smplayer vlc alsa-utils rhythmbox adobe-flash \
 virtualbox virtualbox-guest-additions wine \
 wps-office media-fonts/symbola libreoffice gedit fcitx wqy-zenhei sunpinyin \
 compiz fusion-icon emerald compiz-plugins-main compiz-plugins-extra \
-htop sudo laptop-mode-tools bumblebee 
+htop sudo gentoolkit laptop-mode-tools bumblebee 
 ```
 ### 7. Chinese fonts
 First, configure the /etc/locale.gen
