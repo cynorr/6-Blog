@@ -102,3 +102,9 @@ Device Drivers  --->
   │ │       -*- Enable generic HD-audio codec parser                                     │ │  
   │ │       (0) Default time-out for HD-audio power-save mode  
 ```
+### 10. VirtualBox kernel is not runnint
+```
+root #modprobe vboxdrv
+root #modprobe vboxnetadp
+root #modprobe vboxnetflt 
+```
