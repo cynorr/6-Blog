@@ -108,3 +108,10 @@ root #modprobe vboxdrv
 root #modprobe vboxnetadp
 root #modprobe vboxnetflt 
 ```
+### 11. Themes: Apperance Icons Fonts
+Theme: GreyBird
+```bash
+root # emerge greybird
+```
+Icons: Yosemite Osx xfce, the package of which is in my BaiduCloud. Download it and unpackage it to `/usr/share/icons/`
+Fonts: URW Gothic L Book
