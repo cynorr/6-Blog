@@ -291,15 +291,15 @@ root # emerge xorg-x11
 root # emerge xfce4-meta xfce4-notifyd xfce4-panel xfce4-terminal
 ```
 **slim loginer**
-`SLiM` is one of the login manager, Simple Login Managert.
+`lxdm` is one of the login manager, Simple Login Managert.
 ```
-root # emerge x11-misc/slim
+root # emerge x11-misc/lxdm
 ```
-**Making slim / xfce autoboot**
+**Making lxdm / xfce autoboot**
 ```
 root # vim /etc/conf.d/xdm
 ```
-Set `DISPLAYMANAGER` as `slim`, and add xdm to autoboot list:
+Set `DISPLAYMANAGER` as `lxdm`, and add xdm to autoboot list:
 ```
 root # rc-update add xdm default
 ```
@@ -309,11 +309,11 @@ root # emerge dbus
 root # rc-update add dbus default
 root # /etc/init.d/dbus start
 ```
-Final make slim launch xfce
+Final make lxdm launch xfce, specify the configurations file of lxdm. 
+Following are some necessary settings of `/etc/lxdm/lxdm.conf`
 ```
-root # echo XSESSION=\"Xfce4\" > /etc/env.d/90xsession
-root # env-update && source /etc/profile
-root # reboot
+session=/usr/bin/startxfce4
+autologin=cyno
 ```
 
 ## Step6: Add non-root user
