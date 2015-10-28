@@ -9,51 +9,23 @@ toc: true
 ## Introduction
 It is easy to config the Network for most desktop with just single Ethernet interface, but not easy for laptop with both Ethernet and Wireless interface. Because Wifi supplicant has some conflict with dhcpcd, we should pay more attention to them.
 
-## Ethernet
-If no requirement for static IP address, we prefer DHCP that can obtain it automatically. `dhcpcd` is a popular client that is capable of handing both IPv4 and IPv6 configurations. 
-Firstly install the `dhcpcd`
+## Ethernet && Wireless
+If no requirement for static IP address, we prefer DHCP that can obtain it automatically. `dhcp` is a popular client that is capable of handing both IPv4 and IPv6 configurations. 
+Firstly install the `dhcp`, rather than 'dhcpcd', which has conflits with `NetWorkManager`.
 ```bash
-root # emerge dhcpcd
+root # emerge dhcp
 ```
-Then configure the net profile, we can check name of Ethernet interface by typing `ifconfig` (in this case, the interface name is enp2s0).
-Following is `/etc/conf.d/net`
-```
-# Ehternet 
-config_enp2s0='dhcp'
-```
-**Important**: Do not add dhcpcd to any runlevel,since it can't work well with apa_supplicant for wireless card. And don't worry that Ethernet interface can't get IP address, it will invoke the specific subservice of dhcpcd.
+**Important**: Don't add anything to `/etc/conf.d/net`, and 'NetworkManager` will set `dhcp` default;
 
-Finally, add the ethernet to the runlevel
+Then, set the symbol of ethernet and wireless.
+**This is the necessary step.** Without symbol, the `NetworkManager` would fail to start.
 ```
 root # cd /etc/ini.t
 root # ln -s net.lo net.enp2s0
-root # rc-update add net.enp2s0 default
+root # ln -s net.lo net.wlp3s0 
 ```
+**Important**: Don't add ethernet and wireless to any runlevel, `NetworkManager` will call them automatically;
 
-## Wireless
-The WPA supplicant project provides a package that allows user to connet to WPA enabled access points.
-```bash
-root # emerge wpa_supplicant
-```
-Force the use of wpa_supplicant for wireless. As Ethernet, we use 'ifconfig' commond to check wireless interface name (in this case, my wireless name is wlp3s0).
-Following is `/etc/conf.d/net`
-```bash
-# Ehternet 
-config_enp2s0='dhcp'
-
-# Wireless
-modules_wlp3s0='wpa_supplicant'
-# The driver of wireless card, -Dnl80211 or -Dwext, my driver is -Dnl80211
-wpa_supplicant_wlp3s0='-Dnl80211' 
-```
-**Important**:Do not add wpa_supplicant to any runlevel, otherwise it can't obtain IP address. It will call the subservice of both wpa_supplicant and dhcpcd for authentication and IP address.
-
-Final add the wireless service to runlevel
-```bash
-root # cd /etc/init.d/
-root # ln -s net.lo net.wlp3s0
-root # rc-update add net.wlp3s0 default
-```
 ## GUI
 Both Wicd and NetworkManager are greatful fraphical client on desktop environment, and we prefer Networkmanager. Though wicd is powerful, it has not plugin for panel. However, Networkmanager has a panel client `nm-applet` as a button in panel, which looks concise.
 ```bash
