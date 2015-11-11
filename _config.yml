@@ -70,3 +70,4 @@ deploy:
   type: git
   repository: git@github.com:cynorr/cynorr.github.io.git
   branch: master
+
