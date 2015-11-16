@@ -1,3 +1,7 @@
+title: A branch of Gentoo troubleshooting
+date: 
+category: Gentoo & Linux Server
+---
 ### 1. emerge can't work :Checking whether the C compiler works... no
 ```bash
 root # gcc-config -l

@@ -1,6 +1,6 @@
-title: Gentoo II NetWork: Ethernet, Wireless, Shadowsocks
+title: Gentoo II NetWork -- Ethernet, Wireless, Shadowsocks
 author: Cyno
-category: Gentoo & Linux server
+category: Gentoo & Linux Server
 tag: Network
 date: 2015-07-02
 toc: true
@@ -10,7 +10,7 @@ toc: true
 It is easy to config the Network for most desktop with just single Ethernet interface, but not easy for laptop with both Ethernet and Wireless interface. Because Wifi supplicant has some conflict with dhcpcd, we should pay more attention to them.
 
 ## Ethernet && Wireless
-If no requirement for static IP address, we prefer DHCP that can obtain it automatically. `dhcp` is a popular client that is capable of handing both IPv4 and IPv6 configurations. 
+If no requirement for static IP address, we prefer DHCP that can obtain it automatically. `dhcp` is a popular client that is capable of handing both IPv4 and IPv6 configurations.
 Firstly install the `dhcp`, rather than 'dhcpcd', which has conflits with `NetWorkManager`.
 ```bash
 root # emerge dhcp
@@ -22,7 +22,7 @@ Then, set the symbol of ethernet and wireless.
 ```
 root # cd /etc/ini.t
 root # ln -s net.lo net.enp2s0
-root # ln -s net.lo net.wlp3s0 
+root # ln -s net.lo net.wlp3s0
 ```
 **Important**: Don't add ethernet and wireless to any runlevel, `NetworkManager` will call them automatically;
 
@@ -51,7 +51,7 @@ Then set the shadowsocks configuration `/etc/shadowsocks.json` like this:
         "method":"aes-256-cfb"
 }
 ```
-Launch shadowsocks 
+Launch shadowsocks
 ```bash
 root # ssclient -c /etc/shadowsocks.json
 ```
