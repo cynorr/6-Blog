@@ -1,5 +1,5 @@
 title: A branch of Gentoo troubleshooting
-date: 
+date:
 category: Gentoo & Linux Server
 ---
 ### 1. emerge can't work :Checking whether the C compiler works... no
@@ -35,12 +35,12 @@ euse -E vlc networkmanager alsa
 emerge --autounmask-write \
 x11-misc/slim xf86-video-intel xf86-video-vesa xorg-drivers xorg-x11 \
 greybird xfce4-meta xfce4-notifyd xfce4-panel xfce4-terminal xfce4-screenshooter xfce4-battery-plugin xfce4-power-manager xfce4-mixer xfce4-appfinder xfce4-archive-plugin xfce-extra/tumbler thunar-volman\
-thunderbird firefox google-chrome dhcp net-misc/networkmanager nm-applet \
-smplayer vlc alsa-utils rhythmbox adobe-flash \
+thunderbird firefox google-chrome dhcp net-misc/networkmanager nm-applet opera\
+smplayer alsa-utils rhythmbox adobe-flash media-gfx/mirage\
 virtualbox virtualbox-guest-additions wine \
 wps-office media-fonts/symbola libreoffice gedit fcitx wqy-zenhei sunpinyin \
 compiz fusion-icon emerald compiz-plugins-main compiz-plugins-extra \
-htop sudo screenfetch pciutils gentoolkit laptop-mode-tools bumblebee 
+htop sudo screenfetch pciutils gentoolkit laptop-mode-tools bumblebee
 ```
 ### 7. Chinese fonts
 First, configure the /etc/locale.gen
@@ -63,7 +63,7 @@ After installation, open apperence and activate the Gnome-Cupertino theme. But a
 ```bash
 root # emerge dconf dconf-editor
 ```
-After installation, launch the `dconf-editor`, go to the following address: **org/gnome/desktop/wm/preferences** and in the line theme, change the name of the theme on `Gnome-Cupertino`. 
+After installation, launch the `dconf-editor`, go to the following address: **org/gnome/desktop/wm/preferences** and in the line theme, change the name of the theme on `Gnome-Cupertino`.
 Now the window frames should vary according to the installed and activated the theme **Gnome Cupertino**. If not, open the apperance and reactivate **Gnome Cupertino**.
 
 ### 9.Session and StartUp for **Compiz** can't work
@@ -79,7 +79,7 @@ emerald --replace &
 ### 10. alsa cannot find control device
 We need to set codec for alsa
 ```
-Device Drivers  ---> 
+Device Drivers  --->
   <*> Sound card support  --->
     <*>   Advanced Linux Sound Architecture  --->  
       HD-Audio  --->
@@ -110,7 +110,7 @@ Device Drivers  --->
 ```
 root #modprobe vboxdrv
 root #modprobe vboxnetadp
-root #modprobe vboxnetflt 
+root #modprobe vboxnetflt
 ```
 ### 11. Themes: Apperance Icons Fonts
 Theme: GreyBird
