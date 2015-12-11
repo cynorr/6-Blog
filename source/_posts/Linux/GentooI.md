@@ -36,7 +36,7 @@ Good Luck!
 
 **Steps**
 
-* 1.File System: After step 1, we will have base linux environment and chroot 
+* 1.File System: After step 1, we will have base linux environment and chroot
 * 2.Configure the System: After step 2, most necessary configuration files will have been configured
 * 3.Portage & Kernel: After step 3, the portage is ready to use and the linux kernel is installed
 * 4.Bootloader: After step 4, we can boot the gentoo without the Installation CD
@@ -58,7 +58,7 @@ type `p` to display the disks' current partition configuration
 Command (m for help): p
 Disk /dev/sda: 240 heads, 63 sectors, 2184 cylinders
 Units = cylinders of 15120 * 512 bytes
-  
+
    Device Boot    Start       End    Blocks   Id  System
 /dev/sda1   *         1        14    105808+  83  Linux
 /dev/sda2            15        49    264600   82  Linux swap
@@ -67,7 +67,7 @@ Units = cylinders of 15120 * 512 bytes
 ```
 First remove all existing partitions from the disk. Type `d` to delete a partition. For instance, to delete an existing /dev/sda1:
 ```
-Command (m for help): d 
+Command (m for help): d
 Partition number (1-4): 1
 ```
 First create a very small BIOS boot partition. Type `n` to create a new partition, then `p` to select a primary partition, followed `1` to select the first primary partition. Make sure it starts from 2048 and hit `enter`. When prompted for the last sector , type `+128M` to create a partion 128 Mbyte in size:
@@ -89,7 +89,7 @@ Command (m for help): p
 Disk /dev/sda: 30.0 GB, 30005821440 bytes
 240 heads, 63 sectors/track, 3876 cylinders
 Units = cylinders of 15120 * 512 = 7741440 bytes
-  
+
    Device Boot    Start       End    Blocks   Id  System
 /dev/sda1   *          1       14    105808+  83  Linux
 /dev/sda2            15      3876  28690200   83  Linux
@@ -160,7 +160,7 @@ MAKEOPTS="-j5"
 **Configuring the USE flag**
 `USE` is one of the most powerful variables Gentoo provides to its users. Several programmes can be compiled with or without optional support for certain items. Most of `xfce` desktop users will want to set the following:
 ```
-USE="X dbus jpeg lock session startup-notification thunar udev -gnome -kde -minimal -qt4 
+USE="X dbus jpeg lock session startup-notification thunar udev -gnome -kde -minimal -qt4
 ```
 **Graphic Configuration**
 ```
@@ -237,7 +237,7 @@ Below is a example of an **/etc/fstab** file:
 ```
 /dev/sda1   /boot        ext2    defaults,noatime     0 2
 /dev/sda2   /            ext4    noatime              0 1
-  
+
 /dev/cdrom  /mnt/cdrom   auto    noauto,user          0 0
 ```
 
@@ -290,10 +290,10 @@ root # emerge xorg-x11
 ```
 root # emerge xfce4-meta xfce4-notifyd xfce4-panel xfce4-terminal
 ```
-**slim loginer**
+**lxdm loginer**
 `lxdm` is one of the login manager, Simple Login Managert.
 ```
-root # emerge x11-misc/lxdm
+root # emerge lxde-base/lxdm
 ```
 **Making lxdm / xfce autoboot**
 ```
@@ -309,7 +309,7 @@ root # emerge dbus
 root # rc-update add dbus default
 root # /etc/init.d/dbus start
 ```
-Final make lxdm launch xfce, specify the configurations file of lxdm. 
+Final make lxdm launch xfce, specify the configurations file of lxdm.
 Following are some necessary settings of `/etc/lxdm/lxdm.conf`
 ```
 session=/usr/bin/startxfce4
