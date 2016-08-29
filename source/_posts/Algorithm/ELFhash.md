@@ -108,3 +108,12 @@ int main()
     return 0;
 }
 ```
+问题：为什么Hash表的size总是扩展成一个素数？
+ 
+分析：素数可以有效地减少冲突。具体原因如下
+     假设Hash表的大小为size，这是一个合数，即有size = a * n，当有Hash值为HashCode = b * n，则
+     HashCode取模之后有
+ ![](http://img.blog.csdn.net/20140901162619961)
+    
+ 
+     因为是固定不变的，那么HashCode取值就有了种可能，这样显然会增加冲突的概率。
